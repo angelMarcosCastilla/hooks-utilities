@@ -1,0 +1,9 @@
+
+
+.innerText{
+  max-width: 500px;
+  background-color: cyan;
+}
+span{
+  display: inline-block;
+}
