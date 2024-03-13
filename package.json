@@ -1,18 +1,10 @@
 {
   "name": "mc-react-utils",
   "private": false,
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "una biblioteca con hooks utils para react",
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "exports":{
-    ".":{
-    "import":"./dist/index.js",
-    "require":"./dist/index.js"
-    },
-    "./package.json":"./package.json"
-  },
+  "main": "dist/index.js",
   "scripts": {
     "dev": "vite",
     "prepare": "tsup",
@@ -38,5 +30,10 @@
     "tsup": "^8.0.2",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
-  }
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ]
 }
