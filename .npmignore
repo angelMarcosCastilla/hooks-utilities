@@ -4,3 +4,4 @@ tsconfig.json
 vite.config.json
 index.html
 .eslintrc.cjs
+tsup.config.ts
