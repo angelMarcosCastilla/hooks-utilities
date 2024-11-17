@@ -1,0 +1,29 @@
+import { useEffect } from 'react';
+
+function usePreventScrollBoundaries(ref) {
+  useEffect(() => {
+    const element = ref.current;
+
+    if (!element) return;
+
+    const handleWheel = (event) => {
+      const { deltaY } = event;
+      const { scrollTop, scrollHeight, offsetHeight } = element;
+
+      if (
+        (deltaY < 0 && scrollTop === 0) ||
+        (deltaY > 0 && scrollTop + offsetHeight >= scrollHeight)
+      ) {
+        event.preventDefault();
+      }
+    };
+
+    element.addEventListener('wheel', handleWheel);
+
+    return () => {
+      element.removeEventListener('wheel', handleWheel);
+    };
+  }, [ref]);
+}
+
+export default usePreventScrollBoundaries;
